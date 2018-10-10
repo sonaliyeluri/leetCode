@@ -1,31 +1,18 @@
-#include<stdio.h>
-#include<stdlib.h>
-int* twoSum(int* a, int size, int target)
-{
-	int temp,i;
-	int b[2];
-	int *ptr;
-	ptr=b;
-	if((a[0]+a[size-1])==target)
-	{
-		b[0]=0;
-		b[1]=size-1;
-		return ptr;
-	}
-	else
-	{
-		for(i=0;i<size-1;i++)
-		{
-			temp=a[i]+a[i+1];
-			if(temp==target)
-			{
-				b[0]=i;
-				b[1]=i+1;
-				return ptr;
-			}
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+void twoSum(int* a, int size, int target) {
+	int i, temp;
+	//int *res = malloc(2*sizeof(int));
+	int s[MAX] = {0};
+	for (i=0;i<size;i++) {
+		temp = target - a[i];
+		if (temp >= 0 && s[temp] == 1) {
+			printf("Numbers that sum to %d is (%d, %d)\n",target, temp, a[i]);
+			return;
 		}
-		printf("\nThere are no numbers which sums to %d in array",target);
-		return NULL;
+		s[a[i]] = 1;
 	}
 }
 
@@ -45,8 +32,9 @@ int main()
 	int target;
 	scanf("%d",&target);
 	int size=(sizeof(a))/sizeof(a[0]);
-	ptr=twoSum(p,size,target);
-	if(ptr != NULL)
-		printf("\n%d %d\n",*ptr,*(ptr+1));
+	twoSum(p,size,target);
+	//if(ptr != NULL)
+	//	printf("\n%d %d\n",*ptr,*(ptr+1));
+	return 0;
 }
 
