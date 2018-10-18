@@ -36,10 +36,8 @@ char *commonPrefix (char strs[][7], int n) {
 		if (i == 0 && prefix != 1)
 			return "";
 	}
-	char pre[j];
-	for(int i=0;i<j;i++) 
-		pre[i] = res[i];
-	return pre;
+	res[j] = '\0';
+	return res;
 }	
 
 int main() {
