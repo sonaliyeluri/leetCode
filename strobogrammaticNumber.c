@@ -22,8 +22,8 @@ bool isStrobogrammatic(char *num) {
 }
 
 int main() {
-	//char s1[2] = "88";
-	//printf("%s - %d\n",s1, isStrobogrammatic(s1));
+	char s1[2] = "88";
+	printf("%s - %d\n",s1, isStrobogrammatic(s1));
 	//char s2[2] = "22";
 	//printf("%s - %d\n",s2, isStrobogrammatic(s2));
 	//char s3[3] = "101";
